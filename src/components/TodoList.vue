@@ -1,11 +1,11 @@
 <template>
   <div>
     <h1 v-html="title" />
-    <ul v-if="getFilterTodos().length > 0">
+    <ul v-if="getFilteredTodos().length > 0">
       <li
         class="todo-item"
         v-bind:key="todo.id"
-        v-for="todo in getFilterTodos()"
+        v-for="todo in getFilteredTodos()"
       >
         <label :for="todo.id" v-html="todo.text" />
         <input
@@ -29,7 +29,7 @@ export default {
     currentFilter: { type: String, required: true },
   },
   methods: {
-    getFilterTodos() {
+    getFilteredTodos() {
       switch (this.currentFilter) {
         case 'COMPLETE':
           return this.todos.filter(todo => todo.complete);
