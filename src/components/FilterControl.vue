@@ -10,8 +10,8 @@
 export default {
   name: 'FilterControl',
   props: {
-    currentFilter: String,
-    setFilter: Function,
+    currentFilter: { type: String, required: true },
+    setFilter: { type: Function, required: true },
   }
 } 
 </script>

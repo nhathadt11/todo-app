@@ -8,7 +8,7 @@
 export default {
   name: 'AddTodo',
   props: {
-    todos: Array,
+    todos: { type: Array, required: true },
   },
   data() {
     return {

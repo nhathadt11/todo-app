@@ -24,9 +24,9 @@
 export default {
   name: 'TodoList',
   props: {
-    title: String,
-    todos: Array,
-    currentFilter: String,    
+    title: { type: String, required: true },
+    todos: { type: Array, required: true },
+    currentFilter: { type: String, required: true },
   },
   methods: {
     getFilterTodos() {
