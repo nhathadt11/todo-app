@@ -3,6 +3,7 @@
     <h1 v-html="title" />
     <ul v-if="getFilterTodos().length > 0">
       <li
+        class="todo-item"
         v-bind:key="todo.id"
         v-for="todo in getFilterTodos()"
       >
@@ -45,4 +46,8 @@ export default {
   }
 }
 </script>
-
+<style>
+.todo-item > * {
+  cursor: pointer;
+}
+</style>
