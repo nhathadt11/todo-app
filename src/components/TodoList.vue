@@ -5,8 +5,15 @@
       <li
         v-bind:key="todo.id"
         v-for="todo in getFilterTodos()"
-        v-html="todo.text"
-      />
+      >
+        <label :for="todo.id" v-html="todo.text" />
+        <input
+          type="checkbox"
+          :id="todo.id"
+          :checked="todo.complete"
+          @click="() => toggleTodo(todo.id)"
+        />
+      </li>
     </ul>
   </div>
 </template>
@@ -17,7 +24,7 @@ export default {
   props: {
     title: String,
     todos: Array,
-    currentFilter: String,
+    currentFilter: String,    
   },
   methods: {
     getFilterTodos() {
@@ -30,6 +37,7 @@ export default {
           return this.todos;
       }
     },
+    toggleTodo: function(id) { this.todos.forEach(todo => todo.id === id ? todo.complete = !todo.complete : todo) }
   }
 }
 </script>
