@@ -18,7 +18,7 @@ export default {
   methods: {
     addTodo() {
       const length = this.todos.length;
-      this.todos.push({ id: length, text: this.text });
+      this.todos.push({ id: length, text: this.text, complete: false });
       this.text = undefined;
     }
   }

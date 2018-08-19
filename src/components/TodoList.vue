@@ -38,7 +38,10 @@ export default {
           return this.todos;
       }
     },
-    toggleTodo: function(id) { this.todos.forEach(todo => todo.id === id ? todo.complete = !todo.complete : todo) }
+    toggleTodo: function(id) {
+      const selected = this.todos.find(todo => todo.id === id);
+      selected.complete = !selected.complete;
+    }
   }
 }
 </script>
