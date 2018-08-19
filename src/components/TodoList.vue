@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 v-html="title" />
-    <ul>
+    <ul v-if="getFilterTodos().length > 0">
       <li
         v-bind:key="todo.id"
         v-for="todo in getFilterTodos()"
@@ -15,6 +15,7 @@
         />
       </li>
     </ul>
+    <p v-else>No todos.</p>
   </div>
 </template>
 
