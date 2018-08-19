@@ -4,7 +4,7 @@
     <ul>
       <li
         v-bind:key="todo.id"
-        v-for="todo in todos"
+        v-for="todo in getFilterTodos()"
         v-html="todo.text"
       />
     </ul>
@@ -17,6 +17,19 @@ export default {
   props: {
     title: String,
     todos: Array,
+    currentFilter: String,
+  },
+  methods: {
+    getFilterTodos() {
+      switch (this.currentFilter) {
+        case 'COMPLETE':
+          return this.todos.filter(todo => todo.complete);
+        case 'INCOMPLETE':
+          return this.todos.filter(todo => !todo.complete);
+        default:
+          return this.todos;
+      }
+    },
   }
 }
 </script>
