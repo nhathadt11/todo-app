@@ -1,4 +1,7 @@
 # todo-app
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/nhathadt11/todo-app.svg)](https://greenkeeper.io/)
+
 A simple Todo App in Vue
 
 ## Project setup
